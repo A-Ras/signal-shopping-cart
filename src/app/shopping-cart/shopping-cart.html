@@ -1,0 +1,31 @@
+<div class="cart-container">
+  <!-- Zeige die Zusammenfassung nur an, wenn der Warenkorb nicht leer ist -->
+  @if (cartService.cartCount() > 0) {
+  <div class="cart-summary">
+    <p>Artikel im Korb: <strong>{{ cartService.cartCount() }}</strong></p>
+    <p>Gesamtpreis: <strong>{{ cartService.cartTotal() | currency:'EUR' }}</strong></p>
+  </div>
+
+  <button class="clear-cart-btn" (click)="clearCart()">Warenkob leeren</button>
+
+  <ul class="cart-items-list">
+    @for (item of cartService.cartItems(); track item.product.id) {
+    <li class="cart-item">
+      <div>
+
+        <span class="item-name">{{ item.product.name }}</span>
+        <span class="item-quantity">x {{ item.quantity }}</span>
+      </div>
+      <div>
+
+        <span class="item-price">{{ (item.product.price * item.quantity) | currency:'EUR' }}</span>
+        <button class="remove-btn" (click)="removeFromCart(item.product.id)">X</button>
+      </div>
+
+    </li>
+    }
+  </ul>
+  } @else {
+  <p class="empty-cart-message">Dein Warenkorb ist leer.</p>
+  }
+</div>

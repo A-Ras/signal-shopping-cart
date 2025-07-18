@@ -1,0 +1,97 @@
+.cart-summary {
+  background-color: #eaf2f8;
+  border-left: 5px solid #3498db;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+
+  p {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+  }
+}
+
+.cart-items-list {
+  list-style: none;
+  padding: 0;
+}
+
+// Dies ist der Block, den wir anpassen
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #e0e0e0;
+
+  // Diese neue Regel stylt die beiden div-Wrapper,
+  // die wir im HTML hinzugefügt haben.
+  >div {
+    display: flex;
+    align-items: center;
+    gap: 10px; // Abstand zwischen den Elementen im Wrapper
+  }
+}
+
+.item-name {
+  font-weight: bold;
+}
+
+.item-quantity {
+  color: #555;
+  min-width: 30px; // Sorgt für eine gleichmäßige Ausrichtung
+}
+
+.item-price {
+  font-weight: bold;
+  min-width: 80px; // Sorgt für eine gleichmäßige Ausrichtung der Preise
+  text-align: right;
+}
+
+.empty-cart-message {
+  text-align: center;
+  color: #777;
+  padding: 2rem 0;
+}
+
+// Das ist der neue Style für den "Entfernen"-Button
+.remove-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  font-weight: bold;
+  line-height: 22px;
+  text-align: center;
+  padding: 0;
+  margin-left: 10px;
+  flex-shrink: 0; // Verhindert, dass der Button schrumpft
+
+  &:hover {
+    background-color: #c0392b;
+  }
+
+
+}
+
+.clear-cart-btn {
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #e74c3c;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2;
+
+  &:hover {
+    background-color: #c0392b;
+  }
+}

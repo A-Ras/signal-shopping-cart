@@ -1,0 +1,12 @@
+<div class="product-grid">
+  @for (product of products; track product.id) {
+  <div class="product-card">
+    <img [src]="product.imageUrl" [alt]="product.name">
+    <div class="product-info">
+      <h3>{{ product.name }}</h3>
+      <p class="price">{{ product.price | currency:'EUR' }}</p>
+    </div>
+    <button (click)="addToCart(product)">In den Warenkorb</button>
+  </div>
+  }
+</div>
